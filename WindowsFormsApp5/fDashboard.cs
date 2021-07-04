@@ -14,9 +14,11 @@ using System.Runtime.InteropServices;
 
 namespace WindowsFormsApp5
 {
-    public partial class Form2 : Form
+    public partial class fDashboard : Form
     {
         private Account loginAccount;
+        private fAccount formAcc;
+        private fAdmin formAdmin;
 
         public Account LoginAccount
         {
@@ -28,11 +30,11 @@ namespace WindowsFormsApp5
             }
         }
 
-        public Form2(Account acc)
+        public fDashboard(Account acc)
         {
             InitializeComponent();
             this.LoginAccount = acc;
-            
+
         }
 
         void ChangeAccount(int type)
@@ -42,12 +44,31 @@ namespace WindowsFormsApp5
             lbDisplayname.Text = loginAccount.Displayname;
             lbUsername.Text = loginAccount.Username; 
         }
-        
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
+            //UI
+            pnlNav.Height = btnBill.Height;
+            pnlNav.Top = btnBill.Top;
+            pnlNav.Left = btnBill.Left;
+            btnBill.BackColor = Color.FromArgb(46, 51, 73);
+            //Handle
+            pnlBill.Visible = true;
+            this.formAdmin.Hide();
+            this.formAcc.Hide();
+        }
+
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            fAccountProfile f = new fAccountProfile(loginAccount);
-            f.UpdateAccountEvent += F_UpdateAccountEvent; // đăng ký sự kiện updateAcc
-            f.ShowDialog();
+            //UI
+            pnlNav.Height = btnAccount.Height;
+            pnlNav.Top = btnAccount.Top;
+            pnlNav.Left = btnAccount.Left;
+            btnAccount.BackColor = Color.FromArgb(46, 51, 73);
+            //Handle
+            pnlBill.Visible = false;
+            this.formAdmin.Hide();
+            this.formAcc.Show();
         }
 
         private void F_UpdateAccountEvent(object sender, AccountEvent e) // hàm thực hiện
@@ -57,9 +78,17 @@ namespace WindowsFormsApp5
         
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            fAdmin f = new fAdmin();
-            f.loginAccount = loginAccount;
-            f.ShowDialog();
+            //UI
+            pnlNav.Height = btnAdmin.Height;
+            pnlNav.Top = btnAdmin.Top;
+            pnlNav.Left = btnAdmin.Left;
+            btnAdmin.BackColor = Color.FromArgb(46, 51, 73);
+            //Handle
+            pnlBill.Visible = false;
+            this.formAcc.Hide();
+            this.formAdmin.loginAccount = loginAccount;
+            this.formAdmin.Show();
+
 
             loadItem();
             if(btnInsertBill.Enabled == false)
@@ -75,7 +104,12 @@ namespace WindowsFormsApp5
             dtgvItem.Columns[3].HeaderText = "Đơn giá";
             dtgvItem.Columns[2].Visible = false;
         }
-        
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
 
         private void btnInsertBill_Click(object sender, EventArgs e)
         {
@@ -344,6 +378,19 @@ namespace WindowsFormsApp5
             btnDeleteBill.Enabled = false;
             btnAddItemBill.Enabled = false;
             SetToolTip();
+
+
+            this.formAcc = new fAccount(this.loginAccount);
+            this.formAcc.Dock = DockStyle.Fill;
+            this.pnlRoot.Controls.Add(this.formAcc);
+            this.formAcc.UpdateAccountEvent += F_UpdateAccountEvent; // đăng ký sự kiện updateAcc
+            this.formAcc.Hide();
+
+            this.formAdmin = new fAdmin();
+            this.formAdmin.Dock = DockStyle.Fill;
+            this.pnlRoot.Controls.Add(this.formAdmin);
+            this.formAdmin.Hide();
+
         }
 
         void SetToolTip()
@@ -397,5 +444,26 @@ namespace WindowsFormsApp5
             dtgvItem.Columns[3].HeaderText = "Đơn giá";
             dtgvItem.Columns[2].Visible = false;
         }
+
+        private void btnLogOut_Leave(object sender, EventArgs e)
+        {
+            btnLogOut.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void btnAdmin_Leave(object sender, EventArgs e)
+        {
+            btnAdmin.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void btnAccount_Leave(object sender, EventArgs e)
+        {
+            btnAccount.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void btnBill_Leave(object sender, EventArgs e)
+        {
+            btnBill.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
     }
 }

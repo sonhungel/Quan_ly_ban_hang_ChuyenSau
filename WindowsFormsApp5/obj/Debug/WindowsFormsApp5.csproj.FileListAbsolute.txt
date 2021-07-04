@@ -37,3 +37,16 @@ D:\app vs\QLBH\WindowsFormsApp5 - Copy\WindowsFormsApp5\obj\Debug\WindowsFormsAp
 D:\app vs\QLBH\WindowsFormsApp5 - Copy\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.CoreCompileInputs.cache
 D:\app vs\QLBH\WindowsFormsApp5 - Copy\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.exe
 D:\app vs\QLBH\WindowsFormsApp5 - Copy\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.pdb
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.exe.config
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.exe
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.pdb
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fAdmin.resources
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Properties.Resources.resources
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.GenerateResource.cache
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.CoreCompileInputs.cache
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.exe
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.pdb
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fAccount.resources
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csprojAssemblyReference.cache
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fLogin.resources
+E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fDashboard.resources

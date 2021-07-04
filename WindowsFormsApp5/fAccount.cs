@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +12,7 @@ using WindowsFormsApp5.dataClass;
 
 namespace WindowsFormsApp5
 {
-    public partial class fAccountProfile : Form
+    public partial class fAccount : UserControl
     {
         private static ErrorProvider err = new ErrorProvider();
 
@@ -28,7 +28,7 @@ namespace WindowsFormsApp5
             }
         }
 
-        public fAccountProfile(Account acc)
+        public fAccount(Account acc)
         {
             InitializeComponent();
             this.LoginAccount = acc;
@@ -76,7 +76,7 @@ namespace WindowsFormsApp5
                 if (AccountDAO.Instance.UpdateAccount(username, password, newpass, displayname) == 1)
                 {
                     MessageBox.Show("Cập nhật thành công!");
-                    if(updateAccountEvent!=null) // nếu có sự kiện có đứa đăng kí thì gửi kq về
+                    if (updateAccountEvent != null) // nếu có sự kiện có đứa đăng kí thì gửi kq về
                     {
                         updateAccountEvent(this, new AccountEvent(AccountDAO.Instance.GetAccountByUsername(username)));
                         // truyền vào this và tham số thứ 2 là class Account
@@ -94,9 +94,15 @@ namespace WindowsFormsApp5
             add { updateAccountEvent += value; }
             remove { updateAccountEvent -= value; }
         }
-        private void btnExit_Click(object sender, EventArgs e)
+
+        private void fAccount_Load(object sender, EventArgs e)
         {
-            this.Close();
+            toolTip1.SetToolTip(txbUserName, "Tên dùng để đăng nhập");
+            toolTip1.SetToolTip(txbDisPlayName, "Tên dùng để hiển thị");
+            toolTip1.SetToolTip(txbPassWord, "Nhập mật khẩu hiện tại");
+            toolTip1.SetToolTip(txbNewPass, "Mật khẩu là chuỗi kí tự KHÔNG DẤU");
+            toolTip1.SetToolTip(txbReEnterPass, "Nhập lại mật khẩu mới vừa đặt");
+            toolTip1.SetToolTip(btnUpdate, "Cập nhật thông tin");
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -110,17 +116,6 @@ namespace WindowsFormsApp5
                 MessageBox.Show("Cập nhật thất bại! Vui lòng kiểm tra lại tất cả dữ liệu.");
             }
         }
-
-        private void fAccountProfile_Load(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(txbUserName, "Tên dùng để đăng nhập");
-            toolTip1.SetToolTip(txbDisPlayName, "Tên dùng để hiển thị");
-            toolTip1.SetToolTip(txbPassWord, "Nhập mật khẩu hiện tại");
-            toolTip1.SetToolTip(txbNewPass, "Mật khẩu là chuỗi kí tự KHÔNG DẤU");
-            toolTip1.SetToolTip(txbReEnterPass, "Nhập lại mật khẩu mới vừa đặt");
-            toolTip1.SetToolTip(btnUpdate, "Cập nhật thông tin");
-            toolTip1.SetToolTip(btnExit, "Thoát");
-        }
     }
 
     public class AccountEvent : EventArgs // tạo class AccEvent để chứa Acc mới sau khi cập nhật
@@ -129,7 +124,7 @@ namespace WindowsFormsApp5
 
         public Account Acc { get => acc; set => acc = value; }
 
-        public AccountEvent( Account acc)
+        public AccountEvent(Account acc)
         {
             this.Acc = acc;
         }
