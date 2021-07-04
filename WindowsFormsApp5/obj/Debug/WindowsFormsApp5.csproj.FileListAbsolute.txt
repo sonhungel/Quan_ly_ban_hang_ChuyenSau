@@ -50,3 +50,16 @@ E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsA
 E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csprojAssemblyReference.cache
 E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fLogin.resources
 E:\AppWorkStudy\Quan_ly_ban_hang_NMCNPM\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fDashboard.resources
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.exe.config
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.exe
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.pdb
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csprojAssemblyReference.cache
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fAccount.resources
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fAdmin.resources
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fDashboard.resources
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fLogin.resources
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Properties.Resources.resources
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.GenerateResource.cache
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.CoreCompileInputs.cache
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.exe
+C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.pdb
