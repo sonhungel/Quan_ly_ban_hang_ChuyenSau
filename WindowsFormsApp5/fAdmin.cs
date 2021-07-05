@@ -15,7 +15,7 @@ using WindowsFormsApp5.dataClass;
 
 namespace WindowsFormsApp5
 {
-    public partial class fAdmin : Form
+    public partial class fAdmin : UserControl
     {
         public Account loginAccount;
 
@@ -30,7 +30,6 @@ namespace WindowsFormsApp5
         public fAdmin()
         {
             InitializeComponent();
-            
         }
 
         private void fAdmin_Load(object sender, EventArgs e)
@@ -149,16 +148,16 @@ namespace WindowsFormsApp5
             // comboBox = list string chứ ko = list obj
             cbItem.DataSource = listIdItem;
         }
-        
+
         void LoadListBillByDate(DateTime from, DateTime to)
         {
             float tong = 0;
             string account = cbAccount.Text;
             string iditem = cbItem.Text;
-            
+
             DataTable data = BillDAO.Instance.GetBillListByDate(from, to, account, iditem);
 
-            foreach(DataRow item in data.Rows)
+            foreach (DataRow item in data.Rows)
             {
                 tong += (float)Convert.ToDouble(item["DOANH THU"].ToString());
             }
@@ -206,7 +205,7 @@ namespace WindowsFormsApp5
         {
             DataTable data = AccountDAO.Instance.getListAccount();
             data.Columns.Add("Loại tài khoản", typeof(string)); // thêm cột loại tài khoản
-            foreach(DataRow item in data.Rows)
+            foreach (DataRow item in data.Rows)
             {
                 if ((int)item["TYPE"] == 1) // chỉnh sửa hiển thị loại tài khoản sao cho trực quan hơn
                     item["Loại tài khoản"] = "Quản lý";
@@ -218,7 +217,7 @@ namespace WindowsFormsApp5
             dtgvAccount.Columns[0].HeaderText = "Tên đăng nhập";
             dtgvAccount.Columns[1].HeaderText = "Tên hiển thị";
             dtgvAccount.Columns[2].Visible = false; // ẩn cột loại tài khoản ban đầu có hiển thị là 0 hoặc 1
-            
+
         }
 
         void LoadListItem()
@@ -249,13 +248,13 @@ namespace WindowsFormsApp5
             txbUserName.DataBindings.Add("TEXT", dtgvAccount.DataSource, "USERNAME", true, DataSourceUpdateMode.Never);
             txbDisplayName.DataBindings.Add("TEXT", dtgvAccount.DataSource, "DISPLAYNAME", true, DataSourceUpdateMode.Never);
             txbTypeAcc.DataBindings.Add("TEXT", dtgvAccount.DataSource, "Loại tài khoản", true, DataSourceUpdateMode.Never);
-            
+
         }
 
         int InsertAccount(string username, string displayname, string pass, int type)
         {
             string a = username.ToLower();
-            if(a == "admin")
+            if (a == "admin")
             {
                 err.Clear();
                 MessageBox.Show("Thêm tài khoản không thành công!\nVui lòng chọn Tài khoản khác Admin.");
@@ -264,7 +263,7 @@ namespace WindowsFormsApp5
                 return 0;
 
             }
-            if(AccountDAO.Instance.IsExistAcc(username) > 0)
+            if (AccountDAO.Instance.IsExistAcc(username) > 0)
             {
                 err.Clear();
                 err.SetError(txbUserName, "Tên đăng nhập đã tồn tại, hãy chọn tên đăng nhập khác");
@@ -287,7 +286,7 @@ namespace WindowsFormsApp5
                 MessageBox.Show("Tài khoản đã tồn tại hoặc dữ liệu không đúng, vui lòng kiểm tra lại.");
                 return 0;
             }
-            
+
         }
 
         void UpdateAccount(string username, int type)
@@ -358,7 +357,7 @@ namespace WindowsFormsApp5
                 return;
             }
 
-            
+
             try
             {
                 if (ItemDAO.Instance.InsertItem(id, name, total, price) > 0)
@@ -408,7 +407,7 @@ namespace WindowsFormsApp5
         bool ErrCheck(ErrorProvider err, TextBox txb, string errSTR)
         {
             err.Clear();
-            if(txb.Text.Length < 1)
+            if (txb.Text.Length < 1)
             {
                 err.SetError(txb, errSTR);
                 return true;
@@ -444,7 +443,7 @@ namespace WindowsFormsApp5
                 }
             }
         }
-        
+
         private void btnEditItem_Click(object sender, EventArgs e)
         {
             string id = txbIDItem.Text;
@@ -484,7 +483,7 @@ namespace WindowsFormsApp5
             // lọc định dạng
             saveFileDialog1.Filter = "Định dạng 1 (*.xlsx)|*.xlsx|Định dạng 2 (*.xls)|*.xls";
 
-            if(saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
             {
                 // khới tạo
                 Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
@@ -493,7 +492,7 @@ namespace WindowsFormsApp5
                 // định dạng hàng cột
                 excelApp.Columns.ColumnWidth = 18;
                 // ghi header của column dtgv vào trước
-                for(int i = 1; i < dtgvItem.Columns.Count + 1; i++)
+                for (int i = 1; i < dtgvItem.Columns.Count + 1; i++)
                 {
                     excelApp.Cells[1, i] = dtgvItem.Columns[i - 1].HeaderText;
                 }
@@ -510,7 +509,7 @@ namespace WindowsFormsApp5
                 excelApp.ActiveWorkbook.Saved = true;
                 excelApp.Quit();
 
-                if (MessageBox.Show("Bạn có muốn gửi Email kèm báo cáo này tới địa chỉ Email "+ txbMailAddress.Text +"?", "Hỏi thăm", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Bạn có muốn gửi Email kèm báo cáo này tới địa chỉ Email " + txbMailAddress.Text + "?", "Hỏi thăm", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     SendMail(saveFileDialog1.FileName.ToString(), txbMailAddress.Text);
                 }
@@ -560,7 +559,7 @@ namespace WindowsFormsApp5
 
             btnAddAccount.Visible = false;
             btnEditAccount.Visible = false;
-            
+
 
             txbUserName.ReadOnly = true;
             txbDisplayName.ReadOnly = true;
@@ -592,7 +591,7 @@ namespace WindowsFormsApp5
                 return;
             }
 
-            if(IsUnicode(username))
+            if (IsUnicode(username))
             {
                 err.Clear();
                 err.SetError(txbUserName, "Tên đăng nhập không được chứa ký tự có dấu hoặc ký tự đặc biệt");
@@ -635,18 +634,18 @@ namespace WindowsFormsApp5
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
             string fromUsername = txbUserName.Text;
-            if(fromUsername.ToLower() == "admin")
+            if (fromUsername.ToLower() == "admin")
             {
                 MessageBox.Show("Không thể xóa tài khoản Admin!");
                 return;
             }
-            if(loginAccount.Username == fromUsername)
+            if (loginAccount.Username == fromUsername)
             {
                 MessageBox.Show("Không thể xóa tài khoản đang đăng nhập!");
                 return;
             }
             string toUsername = "admin";
-            if (MessageBox.Show("Bạn có chắc muốn xóa tài khoản "+ fromUsername+ "?","Thông báo",MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Bạn có chắc muốn xóa tài khoản " + fromUsername + "?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 DeleteAccount(fromUsername, toUsername);
                 LoadListAccount();
@@ -657,12 +656,12 @@ namespace WindowsFormsApp5
         {
             string username = txbUserName.Text;
             int type = 0;
-            if(checkbType.Checked)
+            if (checkbType.Checked)
             {
                 type = 1;
             }
 
-            UpdateAccount(username,type);
+            UpdateAccount(username, type);
             LoadListAccount();
 
             btnEditAccount1.Enabled = true;
