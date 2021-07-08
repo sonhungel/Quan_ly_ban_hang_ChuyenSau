@@ -1,0 +1,9 @@
+- Yêu cầu: 
+  + Windows 7 trở lên
+  + SQL Server
+  + .Net Framework 3.5
+  + Excel
+- Hướng dẫn (dành cho cài đặt từ file *.msi):
+  + Chạy File QLBH_Setup.msi (../QLBH_Setup/Debug/QLBH_Setup.msi) để cài đặt chương trình
+  + Tài khoản và mật khẩu mặc định ban đầu là “admin”
+  + Để sử dụng được file báo cáo sau khi bán hàng, cần tạo 1 folder QLBH_Report ở ổ đĩa D (D:\QLBH_Report), và chép file excel Report.xlsx (../Report.xlsx) vào folder trên.

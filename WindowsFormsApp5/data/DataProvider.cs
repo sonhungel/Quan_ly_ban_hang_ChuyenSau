@@ -12,7 +12,7 @@ namespace WindowsFormsApp5.data
     public class DataProvider
     {
         private static DataProvider instance;
-        private string connectionSTR = @"Data Source=DESKTOP-KTUDKKK\SQLEXPRESS;Initial Catalog=QLBH;Integrated Security=True";
+        private string connectionSTR = @"Data Source=DESKTOP-KTUDKKK\SQLEXPRESS;Initial Catalog=QLBH;Integrated Security=True"; //@"Data Source=DESKTOP-OA2NSFP;Initial Catalog=QLBH;Integrated Security=True";
 
         public static DataProvider Instance
         {

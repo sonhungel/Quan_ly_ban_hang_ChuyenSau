@@ -63,3 +63,16 @@ C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsForms
 C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.CoreCompileInputs.cache
 C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.exe
 C:\Users\Tiensp\Desktop\Quan_ly_ban_hang\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.pdb
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.exe.config
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.exe
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\bin\Debug\WindowsFormsApp5.pdb
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csprojResolveAssemblyReference.cache
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fAccount.resources
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fAdmin.resources
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fDashboard.resources
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.fLogin.resources
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.Properties.Resources.resources
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.GenerateResource.Cache
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.CoreCompileInputs.cache
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.exe
+D:\app vs\CNPMCS\Quan_ly_ban_hang_ChuyenSau\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.pdb
